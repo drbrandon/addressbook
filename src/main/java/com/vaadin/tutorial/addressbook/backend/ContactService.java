@@ -24,6 +24,8 @@ public class ContactService {
             "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor",
             "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin",
             "Thompson", "Young", "King", "Robinson" };
+    static String[] tasks = { "Create UI", "Interview Clients", "Optimization", 
+    		"Graphic Design", "Contact Lawyers", "Hire exterminator"};
 
     private static ContactService instance;
 
@@ -44,6 +46,9 @@ public class ContactService {
                 cal.set(1930 + r.nextInt(70),
                         r.nextInt(11), r.nextInt(28));
                 contact.setBirthDate(cal.getTime());
+                
+                contact.setTask(tasks[r.nextInt(tasks.length)]);
+                
                 contactService.save(contact);
             }
             instance = contactService;
